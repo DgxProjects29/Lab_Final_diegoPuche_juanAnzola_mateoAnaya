@@ -19,24 +19,36 @@ public class MateoPoints {
         x2 = x3;
 
         for (n = 0; n <= x3; n++) {
+            //esto es el exponenete de x para seno
             p21 = (2 * n) + 1;
+            //esto es el exponenete de x para coseno
             p31 = 2 * n;
+            
+            //Calculo del numerador -1 ala n
             for (i = 1; i <= n; i++) {
                 p12 = p12 * p11;
             }
+            
+            //Calculo potencia seno
             for (i2 = 1; i2 <= p21; i2++) {
                 p22 = p22 * x2;
 
             }
+            
+            //Calculo Factorial seno
             for (i3 = 1; i3 <= p21; i3++) {
 
                 f = f * i3;
             }
-            for (i5 = 1; i5 <= p31; i2++) {
+            
+            //Calculo potencia coseno
+            for (i5 = 1; i5 <= p31; i5++) {
                 p32 = p32 * x2;
 
             }
-            for (i6 = 1; i6 <= p31; i3++) {
+            
+            //Calculo factorial coseno
+            for (i6 = 1; i6 <= p31; i6++) {
 
                 f2 = f2 * i6;
             }
