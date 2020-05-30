@@ -387,7 +387,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     
                     //MateoPoints.point3();
                     
-                    double x, xText;
+                    double x, xDegrees;
                     
                     //Variables de operaciones
                     double sign = -1;
@@ -395,7 +395,9 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     double demSine = 1, demCosine = 1;
                     
                     //Variables de resultados
-                    double sine = 0, cosine = 0;
+                    double sine = 0, cosine = 0, tangent, cosecant, 
+                            secant, cotangent;
+                    String messageToDisplay;
                     
                     System.out.println("\n----------------------------");
                     System.out.println("       Series de Taylor     ");
@@ -403,11 +405,13 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     
                     //Preguntar por el multiplicador
                     inputValue = JOptionPane.showInputDialog("Por favor, ingrese el angulo en grados");
+                    System.out.println("[Debug] "+inputValue);
 
                     while (inputValue == null || inputValue.equals("") || inputValue.equals("AngleError")) {
 
                         inputValue = JOptionPane.showInputDialog("Por favor, ingrese el multiplicador");
-
+                        
+                        System.out.println("[Debug] "+inputValue);
                         if (inputValue != null) {
 
                             if (!inputValue.equals("")) {
@@ -429,12 +433,12 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     }
                     
                     x = Double.parseDouble(inputValue);
-                    xText = x;
+                    xDegrees = x;
                     x = x * (2 * Math.PI / 360);
                     System.out.println("[Debug]  "+x);
                     
                     //Una aproximacion hasta 10
-                    for (int n = 0; n <= 2; n++) {
+                    for (int n = 0; n <= 10; n++) {
                         
                         //Calculo del signo para el termino atual
                         sign = sign * -1;
@@ -472,15 +476,43 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                         
                     }
                     
-                    /*
-                    double tangent = sine / cosine;
-                    double cosecant = 1 / sine;
-                    double secant = 1 / cosine;
-                    double cotangent = cosine / sine;
-                    */
+                    if(xDegrees == 0 || xDegrees == 180){
+                        tangent = sine / cosine;
+                        secant = 1 / cosine;
+                        messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n" +
+                                "El seno es: " + sine + "\n" +
+                                "El coseno es: " + cosine + "\n" +
+                                "La tangente es: " + tangent + "\n" +
+                                "La secante es: " + secant + "\n" +
+                                "La cosecante no esta definida" + "\n" +
+                                "La cotagente no esta definida";
+                    }else if(xDegrees == 90 || xDegrees == 270){
+                        cosecant = 1 / sine;
+                        cotangent = cosine / sine;
+                        messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n" +
+                                "El seno es: " + sine + "\n" +
+                                "El coseno es: " + cosine + "\n" +
+                                "La tangente no esta definida" + "\n" +
+                                "La secante no esta definida" + "\n" +
+                                "La cosecante es: " + cosecant + "\n" +
+                                "La cotangente es: " + cotangent;
+                    }else{
+                        tangent = sine / cosine;
+                        cosecant = 1 / sine;
+                        secant = 1 / cosine;
+                        cotangent = cosine / sine;
+                        messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n" +
+                                "El seno es: " + sine + "\n" +
+                                "El coseno es: " + cosine + "\n" +
+                                "La tangente es: " + tangent + "\n" +
+                                "La secante es: " + secant + "\n" +
+                                "La cosecante es: " + cosecant + "\n" +
+                                "La cotangente es: " + cotangent;
+                    }
                     
-                    System.out.println("El seno de "+xText+" usando la serie de taylor es: " + sine);
-                    System.out.println("El coseno de "+xText+" usando la serie de taylor es: " + cosine);
+                    JOptionPane.showMessageDialog(null, messageToDisplay,
+                        "Resultados", JOptionPane.INFORMATION_MESSAGE);
+                    
                     
                     break;
 
