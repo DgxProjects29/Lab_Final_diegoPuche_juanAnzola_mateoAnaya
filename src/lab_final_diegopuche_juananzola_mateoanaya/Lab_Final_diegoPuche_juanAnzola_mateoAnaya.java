@@ -7,7 +7,6 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
     public static void main(String[] args) {
 
         String option;
-        String inputValue;
 
         do {
             System.out.println("\n---------------------- Menú -------------------------");
@@ -382,226 +381,26 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     }
                     
                     break;
+                
+                case "Punto y fama":
+                    
+                    break;
                    
                 case "Funciones trigonométricas con series de Taylor":
-                    
-                    //MateoPoints.point3();
-                    
-                    double x, xDegrees;
-                    
-                    //Variables de operaciones
-                    double sign = -1;
-                    double numSine = 1, numCosine = 1;
-                    double demSine = 1, demCosine = 1;
-                    
-                    //Variables de resultados
-                    double sine = 0, cosine = 0, tangent, cosecant, 
-                            secant, cotangent;
-                    String messageToDisplay;
-                    
-                    System.out.println("\n----------------------------");
-                    System.out.println("       Series de Taylor     ");
-                    System.out.println("-----------------------------");
-                    
-                    //Preguntar por el multiplicador
-                    inputValue = JOptionPane.showInputDialog("Por favor, ingrese el angulo en grados");
-                    System.out.println("[Debug] "+inputValue);
 
-                    while (inputValue == null || inputValue.equals("") || inputValue.equals("AngleError")) {
-
-                        inputValue = JOptionPane.showInputDialog("Por favor, ingrese el multiplicador");
-                        
-                        System.out.println("[Debug] "+inputValue);
-                        if (inputValue != null) {
-
-                            if (!inputValue.equals("")) {
-
-                                x = Double.parseDouble(inputValue);
-                                if (x < 0 || x>359) {
-                                    System.out.println("[Error] Angulos validos "
-                                            + "se encuentran en este intervalo [0,360)");
-                                    inputValue = "AngleError";
-                                }
-
-                            } else {
-                                System.out.println("[Error] Debes ingresar algun valor");
-                            }
-
-                        } else {
-                            System.out.println("[Error] Debes ingresar algun valor");
-                        }
-                    }
+                    MateoPoints.point3();
                     
-                    x = Double.parseDouble(inputValue);
-                    xDegrees = x;
-                    x = x * (2 * Math.PI / 360);
-                    System.out.println("[Debug]  "+x);
+                    break;
                     
-                    //Una aproximacion hasta 10
-                    for (int n = 0; n <= 10; n++) {
-                        
-                        //Calculo del signo para el termino atual
-                        sign = sign * -1;
-                        
-                        //Calculo potencia del seno x^(2n + 1)
-                        for (int i2 = 1; i2 <= 2 * n + 1; i2++) {
-                            numSine = numSine * x;
-                        }
-                        
-                        //Calculo Factorial del seno (2n + 1)!
-                        for (int i3 = 1; i3 <= 2 * n + 1; i3++) {
-                            demSine = demSine * i3;
-                        }
-                        
-                        //Calculo potencia coseno x^(2n)
-                        for (int i4 = 1; i4 <= 2 * n; i4++) {
-                            numCosine = numCosine * x;
-                        }
-                        
-                        //Calculo factorial coseno (2n)!
-                        for (int i5 = 1; i5 <= 2 * n; i5++) {
-                            demCosine = demCosine * i5;
-                        }
-                        
-                        sine +=  sign * numSine / demSine;
-                        cosine += sign * numCosine / demCosine;
-                        
-                        System.out.println("[Debug]  "+numSine+" / "+demSine+"  "+sign);
-                        
-                        //Reseto de variables
-                        numSine = 1;
-                        demSine = 1;
-                        numCosine = 1;
-                        demCosine = 1;
-                        
-                    }
+                case "Clave de un número":
                     
-                    if(xDegrees == 0 || xDegrees == 180){
-                        tangent = sine / cosine;
-                        secant = 1 / cosine;
-                        messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n" +
-                                "El seno es: " + sine + "\n" +
-                                "El coseno es: " + cosine + "\n" +
-                                "La tangente es: " + tangent + "\n" +
-                                "La secante es: " + secant + "\n" +
-                                "La cosecante no esta definida" + "\n" +
-                                "La cotagente no esta definida";
-                    }else if(xDegrees == 90 || xDegrees == 270){
-                        cosecant = 1 / sine;
-                        cotangent = cosine / sine;
-                        messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n" +
-                                "El seno es: " + sine + "\n" +
-                                "El coseno es: " + cosine + "\n" +
-                                "La tangente no esta definida" + "\n" +
-                                "La secante no esta definida" + "\n" +
-                                "La cosecante es: " + cosecant + "\n" +
-                                "La cotangente es: " + cotangent;
-                    }else{
-                        tangent = sine / cosine;
-                        cosecant = 1 / sine;
-                        secant = 1 / cosine;
-                        cotangent = cosine / sine;
-                        messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n" +
-                                "El seno es: " + sine + "\n" +
-                                "El coseno es: " + cosine + "\n" +
-                                "La tangente es: " + tangent + "\n" +
-                                "La secante es: " + secant + "\n" +
-                                "La cosecante es: " + cosecant + "\n" +
-                                "La cotangente es: " + cotangent;
-                    }
-                    
-                    JOptionPane.showMessageDialog(null, messageToDisplay,
-                        "Resultados", JOptionPane.INFORMATION_MESSAGE);
-                    
+                    JuanPoints.point4();
                     
                     break;
 
                 case "Multiplicación Rusa":
 
-                    int multiplicador,
-                    multiplicando,
-                    result = 0;
-
-                    System.out.println("\n----------------------------");
-                    System.out.println("    Multiplicacion Rusa     ");
-                    System.out.println("-----------------------------");
-
-                    //Preguntar por el multiplicador
-                    inputValue = JOptionPane.showInputDialog("Por favor, ingrese el multiplicador");
-
-                    while (inputValue == null || inputValue.equals("") || inputValue.equals("NoNatural")) {
-
-                        inputValue = JOptionPane.showInputDialog("Por favor, ingrese el multiplicador");
-
-                        if (inputValue != null) {
-
-                            if (!inputValue.equals("")) {
-
-                                multiplicador = Integer.parseInt(inputValue);
-                                if (multiplicador <= 0) {
-                                    System.out.println("[Error] Solo tabajamos con numeros naturales");
-                                    inputValue = "NoNatural";
-                                }
-
-                            } else {
-                                System.out.println("[Error] Debes ingresar algun valor");
-                            }
-
-                        } else {
-                            System.out.println("[Error] Debes ingresar algun valor");
-                        }
-                    }
-
-                    multiplicador = Integer.parseInt(inputValue);
-
-                    //Preguntar por el multiplicando
-                    inputValue = JOptionPane.showInputDialog("Por favor, ingrese el multiplicando");
-
-                    while (inputValue == null || inputValue.equals("") || inputValue.equals("NoNatural")) {
-
-                        inputValue = JOptionPane.showInputDialog("Por favor, ingrese el multiplicando");
-
-                        if (inputValue != null) {
-
-                            if (!inputValue.equals("")) {
-
-                                multiplicando = Integer.parseInt(inputValue);
-                                if (multiplicando <= 0) {
-                                    System.out.println("[Error] Solo tabajamos con numeros naturales");
-                                    inputValue = "NoNatural";
-                                }
-
-                            } else {
-                                System.out.println("[Error] Debes ingresar algun valor");
-                            }
-
-                        } else {
-                            System.out.println("[Error] Debes ingresar algun valor");
-                        }
-                    }
-
-                    multiplicando = Integer.parseInt(inputValue);
-
-                    while (multiplicador != 1) {
-
-                        if (multiplicador % 2 != 0) {
-                            result = result + multiplicando;
-                        }
-
-                        System.out.println("Multiplicador: " + multiplicador + " "
-                                + "Multiplicando: " + multiplicando);
-
-                        multiplicador = multiplicador / 2;
-                        multiplicando = multiplicando * 2;
-                    }
-
-                    System.out.println("Multiplicador: " + multiplicador + " "
-                            + "Multiplicando: " + multiplicando);
-
-                    //Uno siempre es impar
-                    result += multiplicando;
-
-                    System.out.println("El resultado es: " + result);
+                    JuanPoints.point5();
 
                     break;
 
@@ -610,50 +409,4 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
         } while (!option.equals(""));
     }
 
-    public static int askForValue(String message, int point) {
-
-        String inputValue = JOptionPane.showInputDialog(message);
-        int value;
-        boolean there_is_error = false;
-
-        while (inputValue == null || inputValue.equals("") || there_is_error) {
-
-            inputValue = JOptionPane.showInputDialog(message);
-
-            if (inputValue != null) {
-
-                if (!inputValue.equals("")) {
-
-                    value = Integer.parseInt(inputValue);
-                    there_is_error = validEntryPoint5(value);
-
-                } else {
-                    System.out.println("[Error] Debes ingresar algun valor");
-                }
-
-            } else {
-                System.out.println("[Error] Debes ingresar algun valor");
-            }
-        }
-
-        value = Integer.parseInt(inputValue);
-
-        return value;
-    }
-
-    public static boolean validEntryPoint5(int value) {
-
-        if (value <= 0) {
-            System.out.println("[Error] Solo tabajamos con numeros naturales");
-            return true;
-        }
-
-        return false;
-    }
-    
-    /*
-                    boolean isFull = a1 != 0 && a2 != 0 && a3 != 0 &&
-                            a4 != 0 && a5 != 0 && a6 != 0 &&
-                            a7 != 0 && a8 != 0 && a9 != 0;
-                    */
 }
