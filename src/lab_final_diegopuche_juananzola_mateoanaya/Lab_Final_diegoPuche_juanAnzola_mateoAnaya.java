@@ -9,14 +9,6 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
         String option;
 
         do {
-            System.out.println("\n---------------------- Menú -------------------------");
-            System.out.println("[1]. Triqui ");
-            System.out.println("[2]. Punto y fama ");
-            System.out.println("[3]. Funciones trigonométricas con series de Taylor ");
-            System.out.println("[4]. Clave de un número ");
-            System.out.println("[5]. Multiplicación Rusa");
-            System.out.println("[6]. Salir");
-            System.out.println("-------------------------------------------------------");
 
             Object[] possibleValues = {"Triqui", "Punto y fama",
                 "Funciones trigonométricas con series de Taylor",
@@ -26,7 +18,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     JOptionPane.QUESTION_MESSAGE, null,
                     possibleValues, possibleValues[0]);
 
-            //Si cacelas o cierras el JPaneOption, se acaba el programa
+            //Si cancelas o cierras el JPaneOption, se acaba el programa
             if (optionFromPane == null) {
                 option = "";
             } else {
@@ -37,9 +29,18 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                 
                 case "Triqui":
                     
-                    System.out.println("\n---------------");
-                    System.out.println("     Triqui     ");
-                    System.out.println("-----------------");
+                    //Instrucciones y bienvenida  
+                    JOptionPane.showMessageDialog(null,
+                        "Bienvenido al conocido juego triqui  ", "Triqui",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    
+                    String ExampleTriquiTable = "Las posiciones del tablero son:\n" + 
+                                  "| 1 | 2 | 3 |\n" +
+                                  "| 4 | 5 | 6 |\n" +
+                                  "| 7 | 8 | 9 |\n";
+                    JOptionPane.showMessageDialog(null,
+                        ExampleTriquiTable, "Triqui",
+                        JOptionPane.INFORMATION_MESSAGE);
                     
                     //Variables del tablero de triqui
                     int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0, a6 = 0,
@@ -57,19 +58,22 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     Object[] positions = {"1", "2", "3", "4", "5", "6", "7",
                         "8", "9"};
                     
+                    /*
                     //Primer renderizaje
-                    triquiTable = "|   |   |   |\n" +
-                                  "|   |   |   |\n" +
-                                  "|   |   |   |\n";
-                    System.out.println(triquiTable);
-
+                    triquiTable = "| -- | -- | -- |\n" +
+                                  "| -- | -- | -- |\n" +
+                                  "| -- | -- | -- |\n";
+                    
+                    JOptionPane.showMessageDialog(null,
+                        triquiTable, "Triqui",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    */
+                    
                     while(!thereIsWinner && !isGameOver){
                         
                         gameTurn++;
-                        System.out.println("Turno: "+gameTurn);
                         
                         //Solicitud de ubicacion para jugar en el tablero
-
                         do{
                             isCellFull = false;
                             
@@ -218,14 +222,18 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 }
                                 
                                 if(isCellFull){
-                                    System.out.println("[Error] Celda llena, "
-                                            + "por favor escoja una diferente "
-                                            + "posición");
+                                    
+                                    JOptionPane.showMessageDialog(null,
+                                        "Celda llena, por favor escoja una posición " +
+                                        "diferente  ", "Error",
+                                        JOptionPane.ERROR_MESSAGE);
                                 }
                                 
                             }else{
-                                System.out.println("[Error] No puedes cerrar la "
-                                        + "ventada, por favor escoja una posición");
+                                JOptionPane.showMessageDialog(null,
+                                    "No puedes cerrar la ventada\n" +
+                                    "Por favor escoja una posición", "Error",
+                                    JOptionPane.ERROR_MESSAGE);
                             }
                         
                         }while(positionFromPane == null || isCellFull);
@@ -265,7 +273,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X ";
                                 break;
                             default:
-                                triquiTable += "|   ";
+                                triquiTable += "| -- ";
                                 break;
                             }
                         
@@ -277,7 +285,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X ";
                                 break;
                             default:
-                                triquiTable += "|   ";
+                                triquiTable += "| -- ";
                                 break;
                             }
                         
@@ -289,7 +297,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X |"+"\n";
                                 break;
                             default:
-                                triquiTable += "|   |"+"\n";
+                                triquiTable += "| -- |"+"\n";
                                 break;
                             }
                         
@@ -301,7 +309,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X ";
                                 break;
                             default:
-                                triquiTable += "|   ";
+                                triquiTable += "| -- ";
                                 break;
                             }
                         
@@ -313,7 +321,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X ";
                                 break;
                             default:
-                                triquiTable += "|   ";
+                                triquiTable += "| -- ";
                                 break;
                             }
                         
@@ -325,7 +333,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X |"+"\n";
                                 break;
                             default:
-                                triquiTable += "|   |"+"\n";
+                                triquiTable += "| -- |"+"\n";
                                 break;
                             }
                         
@@ -337,7 +345,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X ";
                                 break;
                             default:
-                                triquiTable += "|   ";
+                                triquiTable += "| -- ";
                                 break;
                             }
                         
@@ -349,7 +357,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X ";
                                 break;
                             default:
-                                triquiTable += "|   ";
+                                triquiTable += "| -- ";
                                 break;
                             }
                         
@@ -361,25 +369,28 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 triquiTable += "| X |"+"\n";
                                 break;
                             default:
-                                triquiTable += "|   |"+"\n";
+                                triquiTable += "| -- |"+"\n";
                                 break;
                             }
                         
-                        System.out.println(triquiTable);
+                        JOptionPane.showMessageDialog(null,
+                        triquiTable, "Turno:  "+gameTurn,
+                        JOptionPane.INFORMATION_MESSAGE);
                     }
+                    
+                    //Fin de la partida
+                    if(gameTurn == 9){
+                        jugadorName = "Nadie gano, juego empatado";
+                    }
+                    
+                    String resultMessage = "Turnos utilizados: "+gameTurn + "\n" +
+                            "Ganador: "+jugadorName + "\n\n" +
+                            "Gracias por jugar!";
+                    
+                    JOptionPane.showMessageDialog(null,
+                        resultMessage, "Resultados: ",
+                        JOptionPane.INFORMATION_MESSAGE);
 
-                    System.out.println("\n----------------------------");
-                    System.out.println("      Fin de la partida     ");
-                    System.out.println("-----------------------------");
-                    
-                    System.out.println("[Info] Resultados:");
-                    
-                    if(gameTurn != 9){
-                        System.out.println("-> El ganador es: "+jugadorName);
-                    }else{
-                        System.out.println("-> El juego quedo en empate!");
-                    }
-                    
                     break;
                 
                 case "Punto y fama":
