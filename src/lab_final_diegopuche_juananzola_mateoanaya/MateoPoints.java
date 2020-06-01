@@ -144,7 +144,7 @@ public class MateoPoints {
 
     public static void punto_y_fama() {
 
-    Scanner entrada=new Scanner(System.in);
+        Scanner entrada=new Scanner(System.in);
         int num = 0, num2 = 0,num12,  num1, num3,num4, c2 = 0,  mod, mod2 , c0 = 0,c=0,num21,num22,num23,num24,mod3,mod4,mod5,mod6,c3=0;
         System.out.println("          Punto y Fama            ");
         System.out.println("__________________________________");
