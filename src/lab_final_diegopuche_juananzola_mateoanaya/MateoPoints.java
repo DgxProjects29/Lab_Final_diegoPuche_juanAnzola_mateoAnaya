@@ -53,7 +53,8 @@ public class MateoPoints {
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Por favor, ingrese algun valor", "Error",
+                        "Por favor, ingrese algun valor "
+                                + "para", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
