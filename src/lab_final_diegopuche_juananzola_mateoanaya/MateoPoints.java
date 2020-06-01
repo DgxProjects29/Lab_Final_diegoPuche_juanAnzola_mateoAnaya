@@ -46,14 +46,14 @@ public class MateoPoints {
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Debes ingresar algun valor", "Error",
+                            "Por favor, ingrese algun valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                     //System.out.println("[Error] Debes ingresar algun valor");
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Debes ingresar algun valor", "Error",
+                        "Por favor, ingrese algun valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -105,34 +105,34 @@ public class MateoPoints {
             tangent = sine / cosine;
             secant = 1 / cosine;
             messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n"
-                    + "El seno es: " + sine + "\n"
-                    + "El coseno es: " + cosine + "\n"
-                    + "La tangente es: " + tangent + "\n"
-                    + "La secante es: " + secant + "\n"
-                    + "La cosecante no esta definida" + "\n"
-                    + "La cotagente no esta definida";
+                    + " >El seno de " + xDegrees +  " es: " + sine + "\n"
+                    + " >El coseno de " + xDegrees + " es: " + cosine + "\n"
+                    + " >La tangente de " + xDegrees + " es: " + tangent + "\n"
+                    + " >La secante de " + xDegrees + " es: " + secant + "\n"
+                    + " >La cosecante no esta definida" + "\n"
+                    + " >La cotagente no esta definida";
         } else if (xDegrees == 90 || xDegrees == 270) {
             cosecant = 1 / sine;
             cotangent = cosine / sine;
             messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n"
-                    + "El seno es: " + sine + "\n"
-                    + "El coseno es: " + cosine + "\n"
-                    + "La tangente no esta definida" + "\n"
-                    + "La secante no esta definida" + "\n"
-                    + "La cosecante es: " + cosecant + "\n"
-                    + "La cotangente es: " + cotangent;
+                    + " >El seno de " + xDegrees + " es: " + sine + "\n"
+                    + " >El coseno de " + xDegrees + " es: " + cosine + "\n"
+                    + " >La tangente no esta definida " + "\n"
+                    + " >La secante no esta definida " + "\n"
+                    + " >La cosecante de " + xDegrees + " es: " + cosecant + "\n"
+                    + " >La cotangente de " + xDegrees + " es: " + cotangent;
         } else {
             tangent = sine / cosine;
             cosecant = 1 / sine;
             secant = 1 / cosine;
             cotangent = cosine / sine;
             messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n"
-                    + "El seno es: " + sine + "\n"
-                    + "El coseno es: " + cosine + "\n"
-                    + "La tangente es: " + tangent + "\n"
-                    + "La secante es: " + secant + "\n"
-                    + "La cosecante es: " + cosecant + "\n"
-                    + "La cotangente es: " + cotangent;
+                    + " >El seno de " + xDegrees + " es: " + sine + "\n"
+                    + " >El coseno de " + xDegrees + " es: " + cosine + "\n"
+                    + " >La tangente de " + xDegrees + " es: " + tangent + "\n"
+                    + " >La secante de " + xDegrees + " es: " + secant + "\n"
+                    + " >La cosecante de " + xDegrees + " es: " + cosecant + "\n"
+                    + " >La cotangente de " + xDegrees + " es: " + cotangent;
         }
 
         JOptionPane.showMessageDialog(null, messageToDisplay,
