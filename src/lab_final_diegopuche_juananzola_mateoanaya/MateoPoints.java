@@ -142,8 +142,94 @@ public class MateoPoints {
     
     
 
-    public static void dudas() {
+    public static void punto_y_fama() {
 
-        //Escribe aqui tu codigo de pruebas
+    Scanner entrada=new Scanner(System.in);
+        int num = 0, num2 = 0,num12,  num1, num3,num4, c2 = 0,  mod, mod2 , c0 = 0,c=0,num21,num22,num23,num24,mod3,mod4,mod5,mod6,c3=0;
+        System.out.println("          Punto y Fama            ");
+        System.out.println("__________________________________");
+        System.out.print("Ingrese un numero jugador 1: ");
+        num=entrada.nextInt();
+        num1=num;
+        num12=num;
+        num3=num;
+        num4=num;
+        while(num>9999 ||num<0){
+            System.out.println("Los datos ingresados no son validos");
+            System.out.print("Ingrese un numero jugador 1: ");
+            num=entrada.nextInt();
+            num1=num;
+            num12=num;
+            num3=num;
+            num4=num;
+            
+            
+        }
+        while (num3!=0){
+            mod=num3%10;
+            while (num4!=0){
+                mod2=num4%10;
+                if(mod==mod2){
+                    c=c+1;
+                    
+                }
+                num4=num4/10;
+            }
+            num3=num3/10;
+            
+        }
+        while(num==num2){
+            c0=c0+1;
+            System.out.print("Adivine el numero jugador 2: ");
+            num2=entrada.nextInt();
+            num21=num2;
+            num22=num2;
+            num23=num2;
+            num24=num2;
+            while(num2>9999 || num2<0){
+                System.out.println("Los datos ingresados no son validos");
+                System.out.print("Adivine nuevamente el numero: ");
+                num2=entrada.nextInt();
+                num21=num2;
+                num22=num2;
+                num23=num2;
+                num24=num2;
+                
+            }
+            while(num21!=0 && num1!=0){
+                mod3=num1%10;
+                mod4=num21%10;
+                if(mod3==mod4){
+                    c2=c2+1;
+                    
+                }
+                num1=num1/10;
+                num21=num21/10;
+                
+                
+            }
+            System.out.println("Tienes " + c2 + " de fama");
+            while(num12!=0){
+                mod5=num12%10;
+                while(num22!=0){
+                    mod6=num22%10;
+                    if(mod5==mod6){
+                        c3=c3+1;
+                        
+                    }
+                    num22=num22/10;
+                    
+                    
+                }
+                num12=num12/10;
+                
+                
+            }
+            System.out.println("Tienes " + c3 + " de puntos");
+            
+                    
+            
+        }
+        System.out.println("Adivinaste usando " + c0 + "intentos");
     }
 }
