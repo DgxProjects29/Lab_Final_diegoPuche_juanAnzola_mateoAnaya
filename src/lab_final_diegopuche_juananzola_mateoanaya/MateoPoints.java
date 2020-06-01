@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 public class MateoPoints {
 
     public static void point3() {
-        
+
         String inputValue;
 
         double x, xDegrees;
@@ -54,7 +54,7 @@ public class MateoPoints {
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Por favor, ingrese algun valor "
-                                + "para", "Error",
+                        + "para", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -106,7 +106,7 @@ public class MateoPoints {
             tangent = sine / cosine;
             secant = 1 / cosine;
             messageToDisplay = "Identidades trigonometricas para el angulo " + xDegrees + "\n"
-                    + " >El seno de " + xDegrees +  " es: " + sine + "\n"
+                    + " >El seno de " + xDegrees + " es: " + sine + "\n"
                     + " >El coseno de " + xDegrees + " es: " + cosine + "\n"
                     + " >La tangente de " + xDegrees + " es: " + tangent + "\n"
                     + " >La secante de " + xDegrees + " es: " + secant + "\n"
@@ -140,27 +140,24 @@ public class MateoPoints {
                 "Resultados", JOptionPane.INFORMATION_MESSAGE);
 
     }
-    
-    
 
     public static void punto_y_fama2() {
 
         String inputValue;
-        
+
         //Introduccion
         JOptionPane.showMessageDialog(null,
                 "Bienvenido al juego punto y fama\n1. El Jugador 1 tiene que ingresar un numero de 4 digitos que no tenga digitos repetidos\n"
-                        + "2. El jugador 2 tiene que adivinar el numero que ingreso el jugador 1\n"
-                        + "3. Fama: Digitos repetidos en la misma posicion\n"
-                        + "4.Puntos: Digitos repetidos en el numero original pero no en la misma posicion ", "Punto y Fama",
+                + "2. El jugador 2 tiene que adivinar el numero que ingreso el jugador 1\n"
+                + "3. Fama: Digitos repetidos en la misma posicion\n"
+                + "4.Puntos: Digitos repetidos en el numero original pero no en la misma posicion ", "Punto y Fama",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+
         //Mateo haz las instrucciones del juego para el usuario, 
         //recuerda que puedes usar \n para hacer saltos de lineas
-        
         int numberToGuess, tempNumGuess;
         boolean isNumberGuessed = false;
-        
+
         do {
 
             inputValue = JOptionPane.showInputDialog("Jugador 1\n"
@@ -169,7 +166,7 @@ public class MateoPoints {
             if (inputValue != null) {
 
                 if (!inputValue.equals("")) {
-                    
+
                     //Validar numero para que sea de 4 cifras 
                     numberToGuess = Integer.parseInt(inputValue);
                     if (numberToGuess < 999 || numberToGuess > 9999) {
@@ -178,80 +175,78 @@ public class MateoPoints {
                                 JOptionPane.ERROR_MESSAGE);
                         inputValue = "NoFourDigits";
                     }
-                    
-                    if(!inputValue.equals("NoFourDigits")){
-                        
+
+                    if (!inputValue.equals("NoFourDigits")) {
+
                         //Descomponemos el numero de 4 cifras 1234 D1Temp = 1
-                        int d1Temp = numberToGuess/1000;
-                        int d2Temp = numberToGuess/100 % 10;
-                        int d3Temp = numberToGuess/10 % 10;
+                        int d1Temp = numberToGuess / 1000;
+                        int d2Temp = numberToGuess / 100 % 10;
+                        int d3Temp = numberToGuess / 10 % 10;
                         int d4Temp = numberToGuess % 10;
-                        
+
                         int currentDigit, counter = 0;
-                        
+
                         //Comparar digitos
                         tempNumGuess = numberToGuess;
-                        
-                        while(tempNumGuess != 0 && !inputValue.equals("RepeatedDigits")){
-                            
+
+                        while (tempNumGuess != 0 && !inputValue.equals("RepeatedDigits")) {
+
                             currentDigit = tempNumGuess % 10;
-                            
-                            if(d1Temp == currentDigit){
+
+                            if (d1Temp == currentDigit) {
                                 counter++;
                             }
-                            if(d2Temp == currentDigit){
+                            if (d2Temp == currentDigit) {
                                 counter++;
                             }
-                            if(d3Temp == currentDigit){
+                            if (d3Temp == currentDigit) {
                                 counter++;
                             }
-                            if(d4Temp == currentDigit){
+                            if (d4Temp == currentDigit) {
                                 counter++;
                             }
-                            
+
                             //Si hay mas de un digito igual, hay repetidos
-                            if(counter > 1){
+                            if (counter > 1) {
                                 JOptionPane.showMessageDialog(null,
-                                    "El número no debe tener digitos repetidos  ", "Error",
-                                    JOptionPane.ERROR_MESSAGE);
+                                        "El número no debe tener digitos repetidos  ", "Error",
+                                        JOptionPane.ERROR_MESSAGE);
                                 inputValue = "RepeatedDigits";
                             }
-                            
+
                             //Resetear el counter
                             counter = 0;
                             tempNumGuess /= 10;
                         }
                     }
-   
+
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Debes ingresar algun valor", "Error",
+                            "Por favor,ingrese algun valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Debes ingresar algun valor", "Error",
+                        "Por favor,ingrese  algun valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
         } while (inputValue == null || inputValue.equals("") || inputValue.equals("NoFourDigits")
                 || inputValue.equals("RepeatedDigits"));
-        
+
         numberToGuess = Integer.parseInt(inputValue);
         //Descomponen el numero en sus digitos, puedes usar d1Temp, pero deberas,
         //Volverlas globales
-        
+
         //Variables del juego, number is the number of "jugador 2"
-        int countFamas, countPoints, number,num,num2,d,d21,num3,num4;
-       
-        
-        while(!isNumberGuessed){
-            
+        int countFamas, countPoints, number, num, num2, d, d21, num3, num4;
+
+        while (!isNumberGuessed) {
+
             countFamas = 0;
             countPoints = 0;
-            
-            
+
             do {
 
                 inputValue = JOptionPane.showInputDialog("Jugador 2\n"
@@ -269,76 +264,109 @@ public class MateoPoints {
                                     JOptionPane.ERROR_MESSAGE);
                             inputValue = "NoFourDigits";
                         }
-                        
-                        //Creo que no es neceario validar numero repetido para el
-                        //Jugador 2
-                        
+
+                        if (!inputValue.equals("NoFourDigits")) {
+
+                            //Descomponemos el numero de 4 cifras 1234 D1Temp = 1
+                            int d1Temp = number / 1000;
+                            int d2Temp = number / 100 % 10;
+                            int d3Temp = number / 10 % 10;
+                            int d4Temp = number % 10;
+
+                            int currentDigit, counter = 0;
+
+                            //Comparar digitos
+                            tempNumGuess = number;
+
+                            while (tempNumGuess != 0 && !inputValue.equals("RepeatedDigits")) {
+
+                                currentDigit = tempNumGuess % 10;
+
+                                if (d1Temp == currentDigit) {
+                                    counter++;
+                                }
+                                if (d2Temp == currentDigit) {
+                                    counter++;
+                                }
+                                if (d3Temp == currentDigit) {
+                                    counter++;
+                                }
+                                if (d4Temp == currentDigit) {
+                                    counter++;
+                                }
+
+                                //Si hay mas de un digito igual, hay repetidos
+                                if (counter > 1) {
+                                    JOptionPane.showMessageDialog(null,
+                                            "El número no debe tener digitos repetidos  ", "Error",
+                                            JOptionPane.ERROR_MESSAGE);
+                                    inputValue = "RepeatedDigits";
+                                }
+
+                                //Resetear el counter
+                                counter = 0;
+                                tempNumGuess /= 10;
+                            }
+                        }
+
                     } else {
                         JOptionPane.showMessageDialog(null,
-                                "Debes ingresar algun valor", "Error",
+                                "Por favor, ingrese algun valor", "Error",
                                 JOptionPane.ERROR_MESSAGE);
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Debes ingresar algun valor", "Error",
+                            "Por favor, ingrese algun valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
-            } while (inputValue == null || inputValue.equals("") || inputValue.equals("NoFourDigits"));
-            
+            } while (inputValue == null || inputValue.equals("") || inputValue.equals("NoFourDigits") || inputValue.equals("RepeatedDigits"));
+
             //Do stuff famas y puntos
             number = Integer.parseInt(inputValue);
-            
+
             //usar while para recorrer sus digitos, ej 8792, 1 iteracion -> 2,
             //2 iteracion -> 9...
-            num=numberToGuess;
-            num2=number;
-            num3=numberToGuess;
-            num4=number;
-            while(num!=0 && num2!=0){
-                d=num%10;
-                d21=num2%10;
-                if(d==d21){
+            num = numberToGuess;
+            num2 = number;
+            num3 = numberToGuess;
+            num4 = number;
+            while (num != 0 && num2 != 0) {
+                d = num % 10;
+                d21 = num2 % 10;
+                if (d == d21) {
                     countFamas++;
-                    
-                    
+
                 }
-                num=num/10;
-                num2=num2/10;
-                
-                
+                num = num / 10;
+                num2 = num2 / 10;
+
             }
-            
-        
-            
-            
-            if(countFamas==4){
-                countPoints=0;
-                
-                
-                
-            }else{
-                while(num3!=0){
-                    d=num3%10;
-                    while(num4!=0){
-                        d21=num4%10;
-                        if(d==d21){
+
+            if (countFamas == 4) {
+                countPoints = 0;
+
+            } else {
+                while (num3 != 0) {
+                    d = num3 % 10;
+                    while (num4 != 0) {
+                        d21 = num4 % 10;
+                        if (d == d21) {
                             countPoints++;
-                            
+
                         }
-                        num4=num4/10;
-                        
+                        num4 = num4 / 10;
+
                     }
-                    num3=num3/10;
-                    
+                    num3 = num3 / 10;
+
                 }
             }
-            JOptionPane.showMessageDialog(null,"Jugador 2 tienes " + countFamas + " famas  y " + countPoints + " puntos", "Fama y Puntos", JOptionPane.INFORMATION_MESSAGE);
-            
-            
+            JOptionPane.showMessageDialog(null, "Jugador 2 tienes " + countFamas + " famas  y " + countPoints + " puntos", "Fama y Puntos", JOptionPane.INFORMATION_MESSAGE);
+
             //Jugador 2 adivina el numero si el numero de famas es 4
             isNumberGuessed = countFamas == 4;
         }
-}
+    }
 }
