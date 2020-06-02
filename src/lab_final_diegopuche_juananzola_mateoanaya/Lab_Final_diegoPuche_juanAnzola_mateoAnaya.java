@@ -407,13 +407,13 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     
                 case "Clave de un número":
                     
-                    //JuanPoints.point4();
+                    JuanPoints.point4();
                     
                     break;
 
                 case "Multiplicación Rusa":
 
-                    //JuanPoints.point5();
+                    JuanPoints.point5();
 
                     break;
 
