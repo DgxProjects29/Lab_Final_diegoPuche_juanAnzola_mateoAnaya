@@ -395,13 +395,13 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                 
                 case "Punto y fama":
                     
-                    //MateoPoints.punto_y_fama2();
+                    MateoPoints.point2();
                     
                     break;
                    
                 case "Funciones trigonométricas con series de Taylor":
 
-                    //MateoPoints.point3();
+                    MateoPoints.point3();
                     
                     break;
                     
