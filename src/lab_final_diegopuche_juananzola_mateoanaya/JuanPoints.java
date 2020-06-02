@@ -1,22 +1,24 @@
 package lab_final_diegopuche_juananzola_mateoanaya;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class JuanPoints {
 
     public static void point4() {
-
-        Scanner l = new Scanner(System.in);
-        int number, multip = 2, d, sum = 0, result;
+        
         String inputValue;
-        System.out.println("\n----------------------------");
-        System.out.println("    Clave de un número     ");
-        System.out.println("-----------------------------");
+
+        int number, numberKey, numberText;
+        int d, multip = 2, sum = 0;
+        
+        JOptionPane.showMessageDialog(null,
+                "Clave de un número", "Clave de un número",
+                JOptionPane.INFORMATION_MESSAGE);
 
         do {
 
-            inputValue = JOptionPane.showInputDialog("Por favor, ingrese el número a hallar clave");
+            inputValue = JOptionPane.showInputDialog("Por favor, ingrese "
+                    + "el número para hallar su clave:  ");
 
             if (inputValue != null) {
 
@@ -24,50 +26,56 @@ public class JuanPoints {
 
                     number = Integer.parseInt(inputValue);
                     if (number < 0) {
-                        JOptionPane.showMessageDialog(null, "La clave del número " +number+ " Es: -1"); 
+                        JOptionPane.showMessageDialog(null, "La clave del número " +number+ " Es: -1  "); 
+                    }
+                    
+                    if(number == 0){
+                        JOptionPane.showMessageDialog(null, "La clave del número " +number+ " Es: 0  "); 
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Debes ingresar algun valor", "Error",
+                            "Por favor, ingrese algun valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Debes ingresar algun valor", "Error",
+                        "Por favor, ingrese algun valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
         } while (inputValue == null || inputValue.equals(""));
 
         number = Integer.parseInt(inputValue);
-        while (number > 0) {
-            // Nos permite dividir el número por digitos
-            d = number % 10;
-            sum = sum + d * multip;         // Acá sumamos la multiplicación de cada digito por 2,3,4,5... n dígitos 
-            multip++;
-            number /= 10;
-
+        numberText = number;
+        
+        if(number > 0){
+            
+            // Nos permite dividir el número por digitos ej 123 -> 3, 2 , 1
+            while (number > 0) {
+                d = number % 10;
+                sum = sum + d * multip;
+                multip++;
+                number /= 10;
+            }
+            
+            numberKey = sum % 10;
+            JOptionPane.showMessageDialog(null, "La clave de " + numberText + " es: " + numberKey,
+                    "Resultados", JOptionPane.INFORMATION_MESSAGE);
         }
-       
-            result = sum % 10;
-            JOptionPane.showMessageDialog(null, "La clave de " + number + " Es: " + result);
-        }
+    }
 
     
-
     public static void point5() {
 
         String inputValue;
 
-        int multiplicador,
-                multiplicando,
-                result = 0;
+        int multiplicador, multiplicando, result = 0;
 
-        System.out.println("\n----------------------------");
-        System.out.println("    Multiplicacion Rusa     ");
-        System.out.println("-----------------------------");
+        JOptionPane.showMessageDialog(null,
+                "Multiplicacion Rusa", "Multiplicacion Rusa",
+                JOptionPane.INFORMATION_MESSAGE);
 
         //Preguntar por el multiplicador
         do {
@@ -81,20 +89,20 @@ public class JuanPoints {
                     multiplicador = Integer.parseInt(inputValue);
                     if (multiplicador <= 0) {
                         JOptionPane.showMessageDialog(null,
-                                "Solo tabajamos con numeros naturales", "Error",
+                                "Solo trabajamos con numeros naturales", "Error",
                                 JOptionPane.ERROR_MESSAGE);
                         inputValue = "NoNatural";
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Debes ingresar algun valor", "Error",
+                            "Por favor, ingrese algun valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Debes ingresar algun valor", "Error",
+                        "Por favor, ingrese algun valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -114,20 +122,20 @@ public class JuanPoints {
                     multiplicando = Integer.parseInt(inputValue);
                     if (multiplicando <= 0) {
                         JOptionPane.showMessageDialog(null,
-                                "Solo tabajamos con numeros naturales", "Error",
+                                "Solo trabajamos con numeros naturales", "Error",
                                 JOptionPane.ERROR_MESSAGE);
                         inputValue = "NoNatural";
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Debes ingresar algun valor", "Error",
+                            "Por favor, ingrese algun valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Debes ingresar algun valor", "Error",
+                        "Por favor, ingrese algun valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -141,26 +149,16 @@ public class JuanPoints {
                 result = result + multiplicando;
             }
 
-            System.out.println("Multiplicador: " + multiplicador + "   "
-                    + "Multiplicando: " + multiplicando);
-
             multiplicador = multiplicador / 2;
             multiplicando = multiplicando * 2;
         }
-
-        System.out.println("Multiplicador: " + multiplicador + " "
-                + "Multiplicando: " + multiplicando);
-
+        
         //Uno siempre es impar
         result += multiplicando;
 
-        System.out.println("El resultado es: " + result);
+        JOptionPane.showMessageDialog(null, "El resultado es: " + result,
+                    "Resultados  ", JOptionPane.INFORMATION_MESSAGE);
 
-    }
-
-    public static void dudas() {
-
-        //Escribe aqui tu codigo de pruebas
     }
 
 }
