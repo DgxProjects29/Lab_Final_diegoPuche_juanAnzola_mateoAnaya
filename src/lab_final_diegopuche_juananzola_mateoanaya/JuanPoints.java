@@ -35,13 +35,13 @@ public class JuanPoints {
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Por favor, ingrese algun valor", "Error",
+                            "Por favor, ingrese algún valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Por favor, ingrese algun valor", "Error",
+                        "Por favor, ingrese algún valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -52,7 +52,7 @@ public class JuanPoints {
         
         if(number > 0){
             
-            // Nos permite dividir el número por digitos ej 123 -> 3, 2 , 1
+            // Nos permite dividir el número por dígitos ej 123 -> 3, 2 , 1
             while (number > 0) {
                 d = number % 10;
                 sum = sum + d * multip;
@@ -62,7 +62,7 @@ public class JuanPoints {
             
             numberKey = sum % 10;
             JOptionPane.showMessageDialog(null, "La clave de " + numberText + " es: " + numberKey,
-                    "Resultados", JOptionPane.INFORMATION_MESSAGE);
+                    "Los resultados son", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -74,7 +74,7 @@ public class JuanPoints {
         int multiplicador, multiplicando, result = 0;
 
         JOptionPane.showMessageDialog(null,
-                "Multiplicacion Rusa", "Multiplicacion Rusa",
+                "Multiplicación Rusa", "Multiplicación Rusa",
                 JOptionPane.INFORMATION_MESSAGE);
 
         //Preguntar por el multiplicador
@@ -89,20 +89,20 @@ public class JuanPoints {
                     multiplicador = Integer.parseInt(inputValue);
                     if (multiplicador <= 0) {
                         JOptionPane.showMessageDialog(null,
-                                "Solo trabajamos con numeros naturales", "Error",
+                                "Solo trabajamos con números naturales", "Error",
                                 JOptionPane.ERROR_MESSAGE);
                         inputValue = "NoNatural";
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Por favor, ingrese algun valor", "Error",
+                            "Por favor, ingrese algún valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Por favor, ingrese algun valor", "Error",
+                        "Por favor, ingrese algún valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -122,20 +122,20 @@ public class JuanPoints {
                     multiplicando = Integer.parseInt(inputValue);
                     if (multiplicando <= 0) {
                         JOptionPane.showMessageDialog(null,
-                                "Solo trabajamos con numeros naturales", "Error",
+                                "Solo trabajamos con números naturales", "Error",
                                 JOptionPane.ERROR_MESSAGE);
                         inputValue = "NoNatural";
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null,
-                            "Por favor, ingrese algun valor", "Error",
+                            "Por favor, ingrese algún valor", "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Por favor, ingrese algun valor", "Error",
+                        "Por favor, ingrese algún valor", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
 
@@ -157,7 +157,7 @@ public class JuanPoints {
         result += multiplicando;
 
         JOptionPane.showMessageDialog(null, "El resultado es: " + result,
-                    "Resultados  ", JOptionPane.INFORMATION_MESSAGE);
+                    "Los resultados son", JOptionPane.INFORMATION_MESSAGE);
 
     }
 

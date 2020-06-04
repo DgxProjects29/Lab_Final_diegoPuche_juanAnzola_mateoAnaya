@@ -14,7 +14,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                 "Funciones trigonométricas con series de Taylor",
                 "Clave de un número", "Multiplicación Rusa", "Salir"};
             Object optionFromPane = JOptionPane.showInputDialog(null,
-                    "Escoge una opcion", "Menu:",
+                    "Escoge una opción", "Menú:",
                     JOptionPane.QUESTION_MESSAGE, null,
                     possibleValues, possibleValues[0]);
 
@@ -31,10 +31,10 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     
                     //Instrucciones y bienvenida  
                     JOptionPane.showMessageDialog(null,
-                        "Bienvenido al conocido juego triqui  ", "Triqui",
+                        "Bienvenido al conocido juego del triqui ", "Triqui",
                         JOptionPane.INFORMATION_MESSAGE);
                     
-                    String ExampleTriquiTable = "Las posiciones del tablero son:\n" + 
+                    String ExampleTriquiTable = "Las posiciones en el tablero son:\n" + 
                                   "| 1 | 2 | 3 |\n" +
                                   "| 4 | 5 | 6 |\n" +
                                   "| 7 | 8 | 9 |\n";
@@ -73,14 +73,14 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                         
                         gameTurn++;
                         
-                        //Solicitud de ubicacion para jugar en el tablero
+                        //Solicitud de ubicación para jugar en el tablero
                         do{
                             isCellFull = false;
                             
                             if(gameTurn % 2 == 0){
                                 jugadorName = "Jugador Cruz";
                             }else{
-                                jugadorName = "Jugador Circulo";
+                                jugadorName = "Jugador Círculo";
                             }
                             
                             positionFromPane = JOptionPane.showInputDialog(null,
@@ -231,14 +231,14 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                                 
                             }else{
                                 JOptionPane.showMessageDialog(null,
-                                    "No puedes cerrar la ventada\n" +
+                                    "No puedes cerrar la ventana\n" +
                                     "Por favor escoja una posición", "Error",
                                     JOptionPane.ERROR_MESSAGE);
                             }
                         
                         }while(positionFromPane == null || isCellFull);
                         
-                        //Hay ocho formas de ganar
+                        //Existen ocho formas para ganar
                         
                         //Horizontales
                         boolean way1 = a1 == a2 && a2 == a3 && (a1 == 1 || a1 == 2);
@@ -262,7 +262,7 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                             isGameOver = true;
                         }
                         
-                        //Renderizar el tablero, duele no tener vectores
+                        //Renderizar el tablero, suele no tener vectores
                         triquiTable = "";
                         
                         switch (a1) {
@@ -380,15 +380,15 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     
                     //Fin de la partida
                     if(gameTurn == 9){
-                        jugadorName = "Nadie gano, juego empatado";
+                        jugadorName = "Nadie gana, juego empatado";
                     }
                     
                     String resultMessage = "Turnos utilizados: "+gameTurn + "\n" +
                             "Ganador: "+jugadorName + "\n\n" +
-                            "Gracias por jugar!";
+                            "¡Gracias por jugar!";
                     
                     JOptionPane.showMessageDialog(null,
-                        resultMessage, "Resultados: ",
+                        resultMessage, "Los resultados son: ",
                         JOptionPane.INFORMATION_MESSAGE);
 
                     break;
