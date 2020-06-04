@@ -159,8 +159,7 @@ public class MateoPoints {
             
             inputValue = "NoError";
 
-            numberToGuess = rd.nextInt(999) + 1000;
-            System.out.println(numberToGuess);
+            numberToGuess = rd.nextInt(8999) + 1000;
 
             if (!inputValue.equals("NoFourDigits")) {
 
@@ -228,7 +227,7 @@ public class MateoPoints {
                         number = Integer.parseInt(inputValue);
                         if (number < 999 || number > 9999) {
                             JOptionPane.showMessageDialog(null,
-                                    "El número debe ser de 4 cifras", "Error",
+                                    "El número debe ser de 4 cifras y positivo", "Error",
                                     JOptionPane.ERROR_MESSAGE);
                             inputValue = "NoFourDigits";
                         }
@@ -300,17 +299,15 @@ public class MateoPoints {
             num2 = number;
             posNum2 = 0;
             posNum = 0;
-            
-            //System.out.println(number);
-            
-            //Calculo total
+                        
+            //Calculo de puntos y famas
             while (num2 != 0) {
                 posNum2 ++;
                 d2 = num2 % 10;
                 while(num != 0){
                     posNum++; 
                     d1 = num % 10;
-                    //System.out.println("Debug:  "+"Pos2: "+posNum2+"  Pos: "+posNum+" -- "+d2+ " - "+d1);
+                    //System.out.println("[Debug]:  "+"Pos2: "+posNum2+"  Pos: "+posNum+" -- "+d2+ " - "+d1);
                     if(d2 == d1 && posNum2 == posNum){
                         countFamas++;
                     }else if(d2 == d1){
@@ -325,8 +322,8 @@ public class MateoPoints {
             }
             
             JOptionPane.showMessageDialog(null, "Jugador 2 tienes:  " + "\n" +
-                    "Famas: "+countFamas + "\n" +
-                    "Puntos: "+countPoints + "\n", "Fama y Puntos", 
+                    "Famas:   "+countFamas + "\n" +
+                    "Puntos:   "+countPoints + "\n", "Fama y Puntos", 
                     JOptionPane.INFORMATION_MESSAGE);
 
             //Jugador 2 adivina el numero si el numero de famas es 4

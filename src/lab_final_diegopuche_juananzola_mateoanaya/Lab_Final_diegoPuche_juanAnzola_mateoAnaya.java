@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
 
     public static void main(String[] args) {
-
+        
         String option;
 
         do {
@@ -414,6 +414,13 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                 case "Multiplicación Rusa":
 
                     JuanPoints.point5();
+                    
+                    break;
+                    
+                case "Salir":
+                    
+                    //Salir del programa
+                    option = "";
 
                     break;
 
