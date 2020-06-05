@@ -3,6 +3,14 @@ package lab_final_diegopuche_juananzola_mateoanaya;
 import javax.swing.JOptionPane;
 
 public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
+    
+    /*
+    
+    Visite el repositorio para ver mas detalles en el readme acerca de la 
+    explicacion de los programas
+    GitHub Repository: https://github.com/DgxProjects29/Lab_Final_diegoPuche_juanAnzola_mateoAnaya
+    
+    */
 
     public static void main(String[] args) {
         
@@ -57,17 +65,6 @@ public class Lab_Final_diegoPuche_juanAnzola_mateoAnaya {
                     
                     Object[] positions = {"1", "2", "3", "4", "5", "6", "7",
                         "8", "9"};
-                    
-                    /*
-                    //Primer renderizaje
-                    triquiTable = "| -- | -- | -- |\n" +
-                                  "| -- | -- | -- |\n" +
-                                  "| -- | -- | -- |\n";
-                    
-                    JOptionPane.showMessageDialog(null,
-                        triquiTable, "Triqui",
-                        JOptionPane.INFORMATION_MESSAGE);
-                    */
                     
                     while(!thereIsWinner && !isGameOver){
                         
